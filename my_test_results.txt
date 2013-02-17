@@ -1,0 +1,28 @@
+java -cp target/test-classes/:target/bukkit-1.4.7-R1.1-SNAPSHOT.jar org.bukkit.metadata.MemoryTest fixed
+
+Memory Test Results: (1 million objects)
+  FixedMetadataValue:
+    phase1: 154.5 MB
+    phase2: 198.3 MB
+
+  StaticMetadataValue:
+    phase1: 84.7 MB
+    phase2: 84.8 MB
+
+
+Speed Test Results:
+
+Testing value FixedMetadataValue: 10000000 iterations
+ => Elapsed 1670 ms
+Testing value StaticMetadataValue: 10000000 iterations
+ => Elapsed 82 ms
+(~ 20.3x speedup )
+
+
+Testing value FixedMetadataValue: 100000000 iterations
+ => Elapsed 16783 ms
+Testing value StaticMetadataValue: 100000000 iterations
+ => Elapsed 841 ms
+(~ 20.0x speedup)
+
+
