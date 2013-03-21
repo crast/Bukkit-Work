@@ -17,7 +17,7 @@ public class FixedMetadataValueEx extends LazyMetadataValue {
      * @param value the value assigned to this metadata value.
      */
     public FixedMetadataValueEx(Plugin owningPlugin, final Object value) {
-        super(owningPlugin, CacheStrategy.CACHE_ETERNALLY, bogusCallable);
+        super(owningPlugin);
         this.internalValue = value;
     }
 
