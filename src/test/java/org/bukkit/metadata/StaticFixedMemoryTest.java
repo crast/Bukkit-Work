@@ -17,6 +17,8 @@ class StaticFixedMemoryTest {
 	            values[i] = new FixedMetadataValue(fooPlugin, new Integer(42));
 	        } else if (option.equals("static")) {
 	            values[i] = new StaticMetadataValue(fooPlugin, new Integer(42));
+	        } else if (option.equals("fixedex")) {
+	        	values[i] = new FixedMetadataValueEx(fooPlugin, new Integer(42));
 	        }
 	    }
 	    try {

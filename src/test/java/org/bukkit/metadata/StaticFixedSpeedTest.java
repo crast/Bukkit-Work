@@ -11,18 +11,20 @@ public class StaticFixedSpeedTest {
      */
     public static void main(String[] args) {
         MetadataValue fixedMeta = new FixedMetadataValue(fooPlugin, new Integer(42));
+        MetadataValue fixedMetaEx = new FixedMetadataValueEx(fooPlugin, new Integer(42));
         MetadataValue staticMeta = new StaticMetadataValue(fooPlugin, new Integer(42));
         int iterations = 10000;
         long elapsed = 0;
         while (elapsed < 10000) {
+            elapsed = speedTest("FixedMetadataValueEx", fixedMetaEx, iterations);
             elapsed = speedTest("FixedMetadataValue", fixedMeta, iterations);
             elapsed += speedTest("StaticMetadataValue", staticMeta, iterations);
             iterations = iterations * 10;
         }
     }
-    
+
     public static long speedTest(String name, MetadataValue mval, int iterations) {
-        System.out.println("Testing value " + name + ": " + iterations + " iterations"); 
+        System.out.println("Testing value " + name + ": " + iterations + " iterations");
         long start_time = System.currentTimeMillis();
         while (--iterations > 0) {
             if (mval.asBoolean() != true) {
