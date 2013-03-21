@@ -128,7 +128,7 @@ public abstract class MetadataStoreBase<T> {
      * @param metadataKey The name identifying the metadata value.
      * @return a unique metadata key for the given subject.
      */
-    private String cachedDisambiguate(T subject, String metadataKey) {
+    protected String cachedDisambiguate(T subject, String metadataKey) {
         if (disambiguationCache.containsKey(subject) && disambiguationCache.get(subject).containsKey(metadataKey)) {
             return disambiguationCache.get(subject).get(metadataKey);
         } else {
